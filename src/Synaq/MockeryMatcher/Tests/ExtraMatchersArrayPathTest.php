@@ -9,19 +9,19 @@
 namespace Synaq\MockeryMatcher\Tests;
 
 
-use Synaq\MockeryMatcher\ExtraMocks;
+use Synaq\MockeryMatcher\ExtraMatchers;
 
-class ExtraMocksArrayPathTest extends \PHPUnit_Framework_TestCase
+class ExtraMatchersArrayPathTest extends \PHPUnit_Framework_TestCase
 {
     public function testArrayPathShouldReturnArrayPathMatcher()
     {
-        $matcher = ExtraMocks::arrayPath(null, null);
+        $matcher = ExtraMatchers::arrayPath(null, null);
         $this->assertInstanceOf('\Synaq\MockeryMatcher\ArrayPath', $matcher);
     }
 
     public function testArrayPathShouldSetValueAndPathOnMatcher()
     {
-        $matcher = ExtraMocks::arrayPath('value', 'some/path');
+        $matcher = ExtraMatchers::arrayPath('value', 'some/path');
         $this->assertEquals('<some/path==value>', $matcher->__toString());
     }
 }

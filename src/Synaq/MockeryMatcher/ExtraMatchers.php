@@ -9,7 +9,7 @@
 namespace Synaq\MockeryMatcher;
 
 
-class ExtraMocks
+class ExtraMatchers
 {
     public static function arrayPath($expected, $path)
     {
