@@ -1,0 +1,21 @@
+{
+  "name": "synaq/mockery-extras",
+  "description": "Extra matching tools for the Mockery framework.",
+  "require": {
+    "mathiasgrimm/arraypath": "^2.0",
+    "mockery/mockery": "^0.9.5"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4.0"
+  },
+  "license": "BSD Simplified License",
+  "authors": [
+    {
+      "name": "Willem Viljoen",
+      "email": "willemv@synaq.com"
+    }
+  ],
+  "autoload": {
+    "psr-0": { "": "src/" }
+  }
+}
