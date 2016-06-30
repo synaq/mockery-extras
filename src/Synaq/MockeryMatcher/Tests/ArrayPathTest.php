@@ -7,27 +7,39 @@ use Synaq\MockeryMatcher\ArrayPath;
 
 class ArrayPathTest extends \PHPUnit_Framework_TestCase
 {
-    public function testToStringShouldReturnArrayPathAndExpectedValue()
+    /**
+     * @test
+     */
+    public function toStringShouldReturnArrayPathAndExpectedValue()
     {
         $arrayPath = new ArrayPath('value', 'some/path');
         $this->assertEquals('<some/path==value>', $arrayPath->__toString());
     }
 
-    public function testMatchShouldReturnFalseIfPathDoesNotExist()
+    /**
+     * @test
+     */
+    public function matchShouldReturnFalseIfPathDoesNotExist()
     {
         $array = ['other' => ['path' => 'value']];
         $arrayPath = new ArrayPath('value', 'some/path');
         $this->assertFalse($arrayPath->match($array));
     }
 
-    public function testMatchShouldReturnFalseIfPathExistsButValueIsDifferent()
+    /**
+     * @test
+     */
+    public function matchShouldReturnFalseIfPathExistsButValueIsDifferent()
     {
         $array = ['some' => ['path' => 'value']];
         $arrayPath = new ArrayPath('other value', 'some/path');
         $this->assertFalse($arrayPath->match($array));
     }
 
-    public function testMatchShouldReturnTrueIfPathExistsAndValueMatchesExpected()
+    /**
+     * @test
+     */
+    public function matchShouldReturnTrueIfPathExistsAndValueMatchesExpected()
     {
         $array = ['some' => ['path' => 'value']];
         $arrayPath = new ArrayPath('value', 'some/path');

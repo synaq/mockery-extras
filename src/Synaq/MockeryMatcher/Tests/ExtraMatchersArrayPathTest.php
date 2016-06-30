@@ -13,13 +13,19 @@ use Synaq\MockeryMatcher\ExtraMatchers;
 
 class ExtraMatchersArrayPathTest extends \PHPUnit_Framework_TestCase
 {
-    public function testArrayPathShouldReturnArrayPathMatcher()
+    /**
+     * @test
+     */
+    public function arrayPathShouldReturnArrayPathMatcher()
     {
         $matcher = ExtraMatchers::arrayPath(null, null);
         $this->assertInstanceOf('\Synaq\MockeryMatcher\ArrayPath', $matcher);
     }
 
-    public function testArrayPathShouldSetValueAndPathOnMatcher()
+    /**
+     * @test
+     */
+    public function arrayPathShouldSetValueAndPathOnMatcher()
     {
         $matcher = ExtraMatchers::arrayPath('value', 'some/path');
         $this->assertEquals('<some/path==value>', $matcher->__toString());
