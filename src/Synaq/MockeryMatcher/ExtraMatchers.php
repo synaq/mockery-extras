@@ -18,6 +18,6 @@ class ExtraMatchers
 
     public static function jsonPath($expected, $path)
     {
-        return new JsonPath(null, null);
+        return new JsonPath($expected, $path);
     }
 }

@@ -21,4 +21,13 @@ class ExtraMatchersJsonPathTest extends \PHPUnit_Framework_TestCase
         $matcher = ExtraMatchers::jsonPath(null, null);
         $this->assertInstanceOf('\Synaq\MockeryMatcher\JsonPath', $matcher);
     }
+
+    /**
+     * @test
+     */
+    public function jsonPathShouldSetValueAndPathOnMatcher()
+    {
+        $matcher = ExtraMatchers::jsonPath('value', '$.some.path');
+        $this->assertEquals('<$.some.path==value>', $matcher->__toString());
+    }
 }
