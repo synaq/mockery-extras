@@ -21,4 +21,14 @@ class JsonPathTest extends \PHPUnit_Framework_TestCase
         $jsonPath = new JsonPath('baz', '$.foo.bar');
         $this->assertEquals('<$.foo.bar==baz>', $jsonPath->__toString());
     }
+
+    /**
+     * @test
+     */
+    public function matchShouldReturnFalseIfPathDoesNotExist()
+    {
+        $json = '{"some": {"existing": {"path": "value"}}}';
+        $jsonPath = new JsonPath('any-value', '$.some.nonexistent.path');
+        $this->assertFalse($jsonPath->match($json));
+    }
 }

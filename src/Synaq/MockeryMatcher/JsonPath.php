@@ -9,6 +9,7 @@
 namespace Synaq\MockeryMatcher;
 
 
+use JsonPath\JsonObject;
 use Mockery\Matcher\MatcherAbstract;
 
 class JsonPath extends MatcherAbstract
@@ -24,17 +25,11 @@ class JsonPath extends MatcherAbstract
         $this->jsonPathSelector = $jsonPathSelector;
     }
 
-    /**
-     * Check if the actual value matches the expected.
-     * Actual passed by reference to preserve reference trail (where applicable)
-     * back to the original method parameter.
-     *
-     * @param mixed $actual
-     * @return bool
-     */
     public function match(&$actual)
     {
-        // TODO: Implement match() method.
+        $json = new JsonObject($actual);
+        $actualValue = $json->get($this->jsonPathSelector);
+        return ($actualValue == $this->_expected);
     }
 
     public function __toString()
