@@ -31,4 +31,24 @@ class JsonPathTest extends \PHPUnit_Framework_TestCase
         $jsonPath = new JsonPath('any-value', '$.some.nonexistent.path');
         $this->assertFalse($jsonPath->match($json));
     }
+
+    /**
+     * @test
+     */
+    public function matchShouldReturnFalseIfPathExistsButValueIsDifferent()
+    {
+        $json = '{"some": {"path": "value"}}';
+        $jsonPath = new JsonPath('not-value', '$.some.path');
+        $this->assertFalse($jsonPath->match($json));
+    }
+
+    /**
+     * @test
+     */
+    public function matchShouldReturnTrueIfPathExistsAndValueMatches()
+    {
+        $json = '{"some": {"path": "value"}}';
+        $jsonPath = new JsonPath('value', '$.some.path');
+        $this->assertTrue($jsonPath->match($json));
+    }
 }

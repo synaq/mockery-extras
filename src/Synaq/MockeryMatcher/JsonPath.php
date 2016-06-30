@@ -27,7 +27,7 @@ class JsonPath extends MatcherAbstract
 
     public function match(&$actual)
     {
-        $json = new JsonObject($actual);
+        $json = new JsonObject($actual, true);
         $actualValue = $json->get($this->jsonPathSelector);
         return ($actualValue == $this->_expected);
     }
