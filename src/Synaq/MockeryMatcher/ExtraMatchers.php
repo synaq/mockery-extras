@@ -15,4 +15,9 @@ class ExtraMatchers
     {
         return new ArrayPath($expected, $path);
     }
+
+    public static function jsonPath($expected, $path)
+    {
+        return new JsonPath($expected, $path);
+    }
 }

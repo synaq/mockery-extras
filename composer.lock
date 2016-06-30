@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d2601481f62284b1c3535038a94c88aa",
-    "content-hash": "26d87d3e63ee4ef0304bcf49fa551e28",
+    "hash": "4d9c467874ac3c8375d2c0743afc4fdf",
+    "content-hash": "93bae4719a90ff60a7710c62ce8d3634",
     "packages": [
         {
             "name": "hamcrest/hamcrest-php",
@@ -161,6 +161,60 @@
                 "testing"
             ],
             "time": "2016-05-22 21:52:33"
+        },
+        {
+            "name": "skyscanner/jsonpath",
+            "version": "0.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Skyscanner/JsonPath-PHP.git",
+                "reference": "edc433c215d0eef65a1db470be4e4e81f93aba3f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Skyscanner/JsonPath-PHP/zipball/edc433c215d0eef65a1db470be4e4e81f93aba3f",
+                "reference": "edc433c215d0eef65a1db470be4e4e81f93aba3f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0",
+                "sami/sami": "dev-master",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "JsonPath\\": "src/Skyscanner/",
+                    "Utilities\\": "src/Skyscanner/",
+                    "Tests\\": "tests/Skyscanner/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache 2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Alessio Linares",
+                    "email": "alessio@alessio.cc",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Tudor Barbu",
+                    "email": "tudor.barbu@skyscanner.net",
+                    "role": "Senior Developer"
+                }
+            ],
+            "description": "JSONPath implementation for querying and updating JSON objects",
+            "keywords": [
+                "json",
+                "jsonpath",
+                "path"
+            ],
+            "time": "2015-10-20 15:02:36"
         }
     ],
     "packages-dev": [
