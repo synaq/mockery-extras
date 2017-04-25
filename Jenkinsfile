@@ -10,6 +10,7 @@ pipeline {
         stage('Test'){
             steps {
                 sh 'phpunit --log-junit results/phpunit/phpunit.xml -c phpunit.xml'
+                junit 'results/phpunit/phpunit.xml'
             }
         }
         stage('Deploy') {
