@@ -9,9 +9,10 @@
 namespace Synaq\MockeryMatcher\Tests;
 
 
+use PHPUnit\Framework\TestCase;
 use Synaq\MockeryMatcher\ExtraMatchers;
 
-class ExtraMatchersJsonPathTest extends \PHPUnit_Framework_TestCase
+class ExtraMatchersJsonPathTest extends TestCase
 {
     /**
      * @test
